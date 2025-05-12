@@ -1,7 +1,7 @@
-// src/components/ChatbotIcon.jsx
+
 import React from 'react';
 
-// Use PascalCase for component names
+
 const ChatbotIcon = ({ className = "", width = "30", height = "30" }) => {
   return (
     <svg
@@ -9,7 +9,7 @@ const ChatbotIcon = ({ className = "", width = "30", height = "30" }) => {
       width={width}
       height={height}
       viewBox="0 0 1024 1024"
-      fill="currentColor" // Allows color control via CSS
+      fill="currentColor" 
       // Apply base class and any passed className
       className={`chatbot-svg-icon ${className}`}
     >
@@ -18,5 +18,5 @@ const ChatbotIcon = ({ className = "", width = "30", height = "30" }) => {
   );
 };
 
-// Use PascalCase for export
+
 export default ChatbotIcon;
