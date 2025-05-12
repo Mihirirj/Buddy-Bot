@@ -1,15 +1,14 @@
-// src/gemini.js
+
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 
-// -----------------------------------------------------------------------------
-// MAKE SURE YOUR API KEY IS CORRECTLY PLACED HERE
-const API_KEY = "AIzaSyADBaGXbOKJ1IwSjcrn-5E6DosmiPhsqWo"; // Replace with your actual key
-// -----------------------------------------------------------------------------
+
+const API_KEY = "AIzaSyADBaGXbOKJ1IwSjcrn-5E6DosmiPhsqWo"; 
+
 
 let genAI;
 let model;
 
-// Initialize the AI model only if the API key is valid
+
 if (API_KEY && API_KEY !== "YOUR_GEMINI_API_KEY") {
   try {
     genAI = new GoogleGenerativeAI(API_KEY);
@@ -38,12 +37,12 @@ export const getGeminiResponse = async (userMessage, chatHistory = []) => {
 
   console.log("--- [getGeminiResponse START] ---"); // Log start
   console.log("Received userMessage:", userMessage);
-  // Log the raw chatHistory array received by this function *before* filtering
+  
   console.log("Received chatHistory (raw count):", chatHistory.length);
   console.log("Received chatHistory (raw content):", JSON.stringify(chatHistory, null, 2));
 
   try {
-    // Format history for the API
+    
     const apiHistory = chatHistory
       .filter(msg => {
           const shouldKeep =
@@ -57,15 +56,15 @@ export const getGeminiResponse = async (userMessage, chatHistory = []) => {
         }
       )
       .map(msg => ({
-        role: msg.role === 'model' ? 'model' : 'user', // Ensure correct role mapping
+        role: msg.role === 'model' ? 'model' : 'user', 
         parts: [{ text: msg.text }],
       }));
 
     // Log the final history array *after* filtering and mapping, right before sending to API
     console.log("Prepared apiHistory for model.startChat (count):", apiHistory.length);
-    console.log("Prepared apiHistory for model.startChat (content):", JSON.stringify(apiHistory, null, 2)); // <<< THIS IS THE CRITICAL LOG
+    console.log("Prepared apiHistory for model.startChat (content):", JSON.stringify(apiHistory, null, 2)); 
 
-    // *** Add an explicit check and warning ***
+    //  Add an explicit check and warning 
     if (apiHistory.length > 0 && apiHistory[0].role !== 'user') {
         console.error(`🆘 CRITICAL WARNING: The first item in apiHistory has role '${apiHistory[0].role}', but should be 'user'. History being sent:`, JSON.stringify(apiHistory, null, 2));
     } else if (apiHistory.length === 0) {
@@ -93,11 +92,11 @@ export const getGeminiResponse = async (userMessage, chatHistory = []) => {
     console.error("❌ Error calling Gemini API:", error); // Log the full error object
     console.log("--- [getGeminiResponse END with ERROR] ---"); // Log end on error
 
-    // ... (keep existing specific error message handling) ...
+    //  (keep existing specific error message handling) 
     if (error.message?.toLowerCase().includes("api key not valid")) {
       return "Error: API Key is not valid. Please check your configuration in src/gemini.js.";
     }
-    // ... other specific errors ...
+    
 
     // Add the specific error check from the console log
     if (error.message?.includes("First content should be with role 'user'")) {
