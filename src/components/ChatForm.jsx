@@ -1,6 +1,6 @@
-// src/components/ChatForm.jsx
+
 import React, { useRef, useState, useEffect } from 'react';
-// Ensure the path to gemini.js is correct relative to this file
+
 import { getGeminiResponse } from '../gemini';
 
 const ChatForm = ({ setChatHistory }) => {
@@ -20,7 +20,7 @@ const ChatForm = ({ setChatHistory }) => {
 
     setIsSending(true); // Disable input/button
 
-    // --- Capture current history *before* adding new messages ---
+    
     let currentHistory;
     setChatHistory(prev => {
         currentHistory = [...prev]; // Make a copy of history for the API call
@@ -29,23 +29,22 @@ const ChatForm = ({ setChatHistory }) => {
     // --- History captured ---
 
     const userMessageId = `user-${Date.now()}`;
-    const thinkingId = `thinking-${Date.now()}`; // Unique ID for the "Thinking..." message
+    const thinkingId = `thinking-${Date.now()}`; 
 
     // Add user message AND "Thinking..." message to chat history
     setChatHistory((prevHistory) => [
       ...prevHistory,
       { role: "user", text: userMessage, id: userMessageId },
-      { role: "model", text: "Thinking...", id: thinkingId, isLoading: true }, // Add thinking message
+      { role: "model", text: "Thinking...", id: thinkingId, isLoading: true }, 
     ]);
 
-    setCurrentMessage(""); // Clear the input field via controlled state
+    setCurrentMessage(""); 
 
     try {
       console.log("Calling getGeminiResponse with:", userMessage, "and history:", currentHistory);
       // Pass the user message and the history *before* current message/thinking was added
       const botResponseText = await getGeminiResponse(userMessage, currentHistory);
 
-      // Replace the "Thinking..." message with the actual bot response
       setChatHistory((prevHistory) =>
         prevHistory.map((msg) =>
           msg.id === thinkingId // Find the specific "Thinking..." message by its ID
@@ -65,15 +64,15 @@ const ChatForm = ({ setChatHistory }) => {
         )
       );
     } finally {
-      setIsSending(false); // Re-enable input/button
-      // Optional: Refocus the input field after sending
-      // inputRef.current?.focus();
+      setIsSending(false); 
+      
+      
     }
   };
 
-  // Effect to focus input when chat opens might be nice (add isChatOpen prop if needed)
+  
   // useEffect(() => {
-  //   if (isChatOpen) { // Assuming isChatOpen prop is passed down
+  //   if (isChatOpen) { 
   //     inputRef.current?.focus();
   //   }
   // }, [isChatOpen]);
