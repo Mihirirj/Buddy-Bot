@@ -1,24 +1,19 @@
-/* src/index.css */
 
-/* --- Font Import (Only if you didn't add it to index.html) --- */
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
-
-/* --- Variables (Optional, but helpful for consistency) --- */
 :root {
   --font-primary: 'Poppins', sans-serif;
-  --color-primary-start: #16a085; /* Teal */
-  --color-primary-end: #2980b9;   /* Soft Blue/Indigo */
+  --color-primary-start: #16a085; 
+  --color-primary-end: #2980b9;   
   --color-gradient-primary: linear-gradient(135deg, var(--color-primary-start) 0%, var(--color-primary-end) 100%);
-  --color-gradient-primary-hover: linear-gradient(135deg, #1abc9c 0%, #3498db 100%); /* Lighter hover */
+  --color-gradient-primary-hover: linear-gradient(135deg, #1abc9c 0%, #3498db 100%); 
 
-  --color-bg-light: #F8F9FA;      /* Very light grey for chat body */
+  --color-bg-light: #F8F9FA;      
   --color-bg-white: #FFFFFF;
-  --color-border: #E0E5EC;       /* Soft border color */
-  --color-text-dark: #34495e;    /* Dark grey-blue text */
+  --color-border: #E0E5EC;       
+  --color-text-dark: #34495e;   
   --color-text-light: #FFFFFF;
-  --color-text-muted: #7f8c8d;   /* For placeholders, thinking state */
-  --color-bot-bubble-bg: #ECF0F1; /* Light grey for bot bubble */
-  --color-disabled: #bdc3c7;      /* Disabled button color */
+  --color-text-muted: #7f8c8d;   
+  --color-bot-bubble-bg: #ECF0F1; 
+  --color-disabled: #bdc3c7;      
   --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-strong: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
@@ -32,7 +27,7 @@
 
 body {
   font-family: var(--font-primary);
-  background-color: var(--color-bg-light); /* Use light bg for body if chat isn't full screen */
+  background-color: var(--color-bg-light); 
   line-height: 1.6;
   color: var(--color-text-dark);
   -webkit-font-smoothing: antialiased;
@@ -175,12 +170,12 @@ body {
   width: 7px;
 }
 .chat-body::-webkit-scrollbar-thumb {
-  background-color: #bdc3c7; /* Muted grey */
+  background-color: #bdc3c7; 
   border-radius: 4px;
   border: 2px solid var(--color-bg-light);
 }
 .chat-body::-webkit-scrollbar-track {
-  background-color: #ecf0f1; /* Slightly darker than body bg */
+  background-color: #ecf0f1; 
   border-radius: 4px;
 }
 
@@ -204,15 +199,15 @@ body {
 .bot-message .chatbot-svg-icon {
   width: 30px;
   height: 30px;
-  fill: var(--color-primary-start); /* Use the primary teal */
+  fill: var(--color-primary-start); 
   flex-shrink: 0;
   margin-bottom: 4px;
 }
 
 .message-text {
   padding: 12px 18px;
-  border-radius: 18px; /* Maintain nice roundness */
-  font-size: 0.95rem; /* Slightly smaller for balance */
+  border-radius: 18px; 
+  font-size: 0.95rem; 
   line-height: 1.6;
   word-wrap: break-word;
   box-shadow: var(--shadow-soft);
@@ -221,27 +216,27 @@ body {
 .bot-message .message-text {
   background-color: var(--color-bot-bubble-bg);
   color: var(--color-text-dark);
-  border-top-left-radius: 6px; /* Subtle shape difference */
+  border-top-left-radius: 6px; 
 }
 
 .bot-message .message-text.thinking {
   color: var(--color-text-muted);
   font-style: italic;
-  background-color: #f2f4f6; /* Slightly different thinking bg */
+  background-color: #f2f4f6; 
   box-shadow: none;
 }
 
 .user-message .message-text {
   background: var(--color-gradient-primary);
   color: var(--color-text-light);
-  border-top-right-radius: 6px; /* Subtle shape difference */
+  border-top-right-radius: 6px; 
 }
 
 /* --- Chat Footer & Form --- */
 .chat-footer {
   display: flex;
   align-items: center;
-  padding: 15px 20px; /* Adjusted padding */
+  padding: 15px 20px; 
   border-top: 1px solid var(--color-border);
   background-color: var(--color-bg-white);
   flex-shrink: 0;
@@ -256,11 +251,11 @@ body {
 
 .message-input {
   flex: 1;
-  padding: 12px 18px; /* Comfortable padding */
+  padding: 12px 18px; 
   font-size: 0.95rem;
   font-family: var(--font-primary);
   border: 1px solid var(--color-border);
-  border-radius: 22px; /* Match button */
+  border-radius: 22px; 
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   color: var(--color-text-dark);
@@ -268,12 +263,12 @@ body {
 
 .message-input::placeholder {
   color: var(--color-text-muted);
-  font-weight: 300; /* Lighter placeholder */
+  font-weight: 300; 
 }
 
 .message-input:focus {
   border-color: var(--color-primary-start);
-  box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.15); /* Focus ring with primary color */
+  box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.15); 
 }
 
 /* --- Send Button --- */
@@ -286,11 +281,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px; /* Adjusted size */
+  width: 44px; 
   height: 44px;
   transition: transform 0.2s ease-out, background 0.2s ease, box-shadow 0.2s ease;
   flex-shrink: 0;
-  box-shadow: 0 3px 8px rgba(22, 160, 133, 0.3); /* Shadow using primary color */
+  box-shadow: 0 3px 8px rgba(22, 160, 133, 0.3); 
 }
 
 .send-button .material-symbols-rounded {
@@ -318,14 +313,14 @@ body {
     transform: none;
 }
 .send-button:disabled:hover {
-  transform: scale(1); /* No scale effect when disabled */
+  transform: scale(1); 
 }
-/* Add this inside the body { ... } rule in src/index.css */
+
 body {
   font-family: var(--font-primary);
-  background-color: #e0f7fa; /* Base color - light cyan */
-  background-image: radial-gradient(var(--color-primary-start, #16a085) 0.5px, transparent 0.5px); /* Use primary teal for dots */
-  background-size: 10px 10px; /* Size of the repeating grid */
+  background-color: #e0f7fa; 
+  background-image: radial-gradient(var(--color-primary-start, #16a085) 0.5px, transparent 0.5px); 
+  background-size: 10px 10px; 
   background-attachment: fixed;
   min-height: 100vh;
   line-height: 1.6;
