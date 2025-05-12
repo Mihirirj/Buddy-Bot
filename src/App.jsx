@@ -1,9 +1,9 @@
-// src/App.jsx
+
 import React, { useState, useEffect, useRef } from 'react';
-import ChatbotIcon from "./components/ChatbotIcon"; // Corrected import and naming
+import ChatbotIcon from "./components/ChatbotIcon"; 
 import ChatForm from "./components/ChatForm";
 import ChatMessage from "./components/ChatMessage";
-import './index.css'; // Ensure CSS is imported
+import './index.css'; 
 
 const App = () => {
   // State for the chat messages history
@@ -12,7 +12,7 @@ const App = () => {
     { role: "model", text: "Hey there! I'm your AI Assistant. How can I help you today?", id: "initial-bot-message" }
   ]);
   // State to control if the chat popup is open or closed
-  const [isChatOpen, setIsChatOpen] = useState(false); // Start closed by default
+  const [isChatOpen, setIsChatOpen] = useState(false); 
   // Ref to the chat body div for scrolling
   const chatBodyRef = useRef(null);
 
@@ -39,7 +39,7 @@ const App = () => {
       {/* Chat Launcher Button: Only shown when chat is closed */}
       {!isChatOpen && (
         <button onClick={toggleChatPopup} className="chatbot-launcher" aria-label="Open chat assistant">
-          <ChatbotIcon width="32" height="32"/> {/* Use ChatbotIcon component */}
+          <ChatbotIcon width="32" height="32"/> 
         </button>
       )}
 
