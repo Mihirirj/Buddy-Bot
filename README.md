@@ -2,9 +2,6 @@
 
 Leverages React, Vite, and the Google Gemini API to deliver automated support and instant information retrieval via a customizable floating popup interface. Designed for easy integration into existing dashboards, internal tools, or documentation sites.
 
-![Industrial Chatbot Interface](![buddybot](https://github.com/user-attachments/assets/7b9ddfe9-67ff-4457-8c7c-967f3dbae458)
-)
-*(Screenshot showing the chatbot, perhaps overlaid on a mock industrial dashboard or documentation page)*
 
 **Potential Industrial Use Cases:**
 
