@@ -1,12 +1,18 @@
-# React + Vite
+# React AI Chatbot for Industrial Applications
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Leverages React, Vite, and the Google Gemini API to deliver automated support and instant information retrieval via a customizable floating popup interface. Designed for easy integration into existing dashboards, internal tools, or documentation sites.
 
-Currently, two official plugins are available:
+![Industrial Chatbot Interface](![buddybot](https://github.com/user-attachments/assets/7b9ddfe9-67ff-4457-8c7c-967f3dbae458)
+)
+*(Screenshot showing the chatbot, perhaps overlaid on a mock industrial dashboard or documentation page)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Potential Industrial Use Cases:**
 
-## Expanding the ESLint configuration
+*   Answering technical FAQs about machinery or processes.
+*   Guiding users through standard operating procedures (SOPs).
+*   Providing quick access to safety protocols or data sheets.
+*   Basic troubleshooting assistance for common issues.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Explore the Demo: [https://buddy-bot-ten.vercel.app/]
+
+---
